@@ -1,0 +1,57 @@
+
+<div class="shadow  mb-4 bg-white rounded"><div class="head">
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color: rgb(180, 205, 253); font-weight: bold;" [routerLink]="['dashboard']">Loan ManageMent System</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="color: azure;" aria-current="page" [routerLink]="['dashboard']">Home</a>
+          </li>
+          
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="users">Users</a></li>
+              <li><a class="dropdown-item" href="#">Loans</a></li>
+              <li><a class="dropdown-item"  href="customers">Customers</a></li>
+              <li><a class="dropdown-item" href="payments">Payments</a></li>
+              <li><a class="dropdown-item" href="invoices">Invoices</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="settings">Settings</a></li>
+            </ul>
+          </li> -->
+          
+          <li class="nav-item">
+            <a class="nav-link" style="color: azure;" href="#">Help</a>
+          </li>
+        </ul>
+        <!-- <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+        
+        <div class="dropdown">
+          <button (click)="showDetails()" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+           User
+          </button>
+          
+          <ul class="dropdown-menu  " aria-labelledby="dropdownMenuButton1">
+            <li class="dropdown-item" >Name : {{UserObj.userName | uppercase}} </li>
+            <li class="dropdown-item" >Email : {{UserObj.email | lowercase}}</li>
+            <!-- <hr class="dropdown-divider"> -->
+            
+          </ul>
+        </div>
+        <button class="btn btn-primary" style="color: azure;"  type="button" (click)="logOut()"> Log Out  ⮫</button>
+      </div>
+    </div>
+  </nav>
+</div>
+</div>
+

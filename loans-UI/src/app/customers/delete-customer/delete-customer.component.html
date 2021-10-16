@@ -1,0 +1,16 @@
+
+
+<h3 style="text-align: center;">Details of customer to be deleted :</h3>
+<table>
+    <tr> <b> First name :</b> {{customerDetails.firstName}}</tr>
+    <tr><b>Last name  : </b>{{customerDetails.lastName}}</tr>
+    <tr><b>DOB        :</b>{{customerDetails.dob}}</tr>
+    <tr><b>Mail address :</b>{{customerDetails.emailAddress}}</tr>
+    <tr><b>Phone number :</b> {{customerDetails.phoneNumber}}</tr>
+    <tr><b>Department :</b>{{customerDetails.department}}</tr>
+    <tr><h5 *ngIf="deleted" style="color: green;">{{result}}</h5></tr><br>
+    <tr *ngIf="!deleted">Are you sure to delete ? <button class="btn-success m-1" (click)="deleteCustomer()">Yes</button><button (click)="back()" class="btn-danger m-1" >No</button></tr>
+    <tr><button *ngIf="deleted" class="btn-warning m-1" (click)="back()">Back</button></tr>
+    
+    <!-- <button *ngIf="deleted" class="btn btn-warning" (click)="back()">Back</button> -->
+</table>

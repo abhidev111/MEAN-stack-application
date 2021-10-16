@@ -1,0 +1,35 @@
+<h1 style="text-align: center;">Customer list</h1>
+
+<div class="goRight">
+    <input style="width: 300px;float: right;margin: 30px;"   type="search" placeholder="Search.." class="form-control" name="searchTxt" [(ngModel)]="searchTxt" >
+    <p style="float:left;margin: 30px;">Customer count : {{recordCount}}</p>
+</div>
+
+
+
+<table class=" shadow p-3 mb-5 rounded">
+    <th>Sl.no</th>
+    <!-- <th>ID</th> -->
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Mail</th>
+    <th>Phone No</th>
+    <th>DOB</th>
+    <th>Department</th>
+    <th></th>
+    <th></th>
+    <tr *ngFor ="let customer of customerList | filter:searchTxt; let i = index">
+        <td>{{i+1}} </td>
+        <!-- <td>{{customer._id}}</td> -->
+        <td>{{customer.firstName | uppercase}}</td>
+        <td>{{customer.lastName | uppercase}}</td>
+        <td>{{customer.emailAddress | lowercase}}</td>
+        <td>{{customer.phoneNumber}}</td>
+        <td>{{customer.dob}}</td>
+        <td>{{customer.department | uppercase}}</td>
+        <td><a class="btn btn-warning" [routerLink]="['./edit-customer',customer._id]">Edit</a></td>
+        <td><a class="btn btn-danger" [routerLink]="['delete-customer',customer._id]">Delete</a></td>
+    </tr>
+
+</table>
+

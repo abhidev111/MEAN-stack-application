@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    margin: 40px;
+}
+.center{
+    width :500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.full{
+    
+    height: 320px;
+    background-color:rgb(80, 240, 240) ;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 18px #a5a4a4;
+}

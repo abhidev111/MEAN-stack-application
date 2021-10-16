@@ -1,0 +1,31 @@
+<div class="card shadow p-3 mb-5  rounded">
+    <h2>Register</h2>
+    <form #signUpForm ="ngForm" (submit)="signUpForm.valid && Submit(signUpForm)">
+        
+        <input type="text"   class="form-control" placeholder="Username" [(ngModel)]="userName" name="userName" #userNamed="ngModel" 
+        required [ngClass]="{'invalid-textbox': signUpForm.submitted && !userNamed.valid}" >
+        <div class="label" *ngIf="signUpForm.submitted && !userNamed.valid">Username can't be empty</div>
+
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" name="email" 
+        #mailId="ngModel"
+        required [ngClass]="{'invalid-textbox': signUpForm.submitted && !mailId.valid}">
+        <div class="label" *ngIf="signUpForm.submitted && !mailId.valid"> Email can't be empty</div>
+
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password" 
+        #Password="ngModel" minlength="4"
+        required [ngClass]="{'invalid-textbox': signUpForm.submitted && !Password.valid}"  >
+        <div class="label" *ngIf="signUpForm.submitted && !Password.valid && !Password.errors?.minlength">Password can't be empty</div>
+        <div class="label" *ngIf="signUpForm.submitted && Password.errors?.minlength">Minimum 4 characters required</div>
+        <div class="d-flex">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+        <button  class="btn btn-secondary"  (click)="reset(signUpForm)" *ngIf="signUpForm.dirty">Reset</button>
+    </div>
+        
+    </form>
+    <div class="sucMsg" *ngIf="Registersuccess">{{successMsg}}</div>
+    <div class="errMsg" *ngIf="gotErr">{{errorMsg}}</div>
+    <p *ngIf="!Registersuccess">Already have an account? <a [routerLink]="['../sign-in']" >Sign-in</a> </p>
+    <button class="loginButton btn" *ngIf="Registersuccess" [routerLink]="['../sign-in']">Proceed to Login ➔</button>
+    </div>
+
+    <!-- [ngClass]="{'classname' : condition}" -->

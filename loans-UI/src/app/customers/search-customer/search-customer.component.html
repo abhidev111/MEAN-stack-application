@@ -1,0 +1,18 @@
+
+<h3 style="text-align: center;">Details of customer:</h3>
+<table >
+    <tr><b>Ref. Id :</b>{{customerDetails._id}}</tr>
+    <tr> <b> First name :</b> {{customerDetails.firstName}}</tr>
+    <tr><b>Last name  : </b>{{customerDetails.lastName}}</tr>
+    <tr><b>DOB        :</b>{{customerDetails.dob}}</tr>
+    <tr><b>Mail address :</b>{{customerDetails.emailAddress}}</tr>
+    <tr><b>Phone number :</b> {{customerDetails.phoneNumber}}</tr>
+    <tr><b>Department :</b>{{customerDetails.department}}</tr>
+    <br>
+    <tr><button class="btn-success m-1" [routerLink]="['../../edit-customer',customerId]">Edit</button>
+        <button class="btn-danger m-1" [routerLink]="['../../delete-customer',customerId]">Delete</button>
+        <button class="btn-warning m-1" (click)="back()">Back</button></tr>
+    
+    <!-- <button *ngIf="deleted" class="btn btn-warning" (click)="back()">Back</button> -->
+</table>
+<!-- <div class="err" ngModel="serverErrorMsg">{{serverErrorMsg}}</div> -->
