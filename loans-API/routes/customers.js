@@ -102,7 +102,7 @@ router.put('/update/:id', function(req, res, next) { // every data that we send 
 
 /* delete a user */
 router.delete('/delete/:id', function(req, res, next) {
-    const userId = req.body.id;
+    const userId = req.params.id;
     customerModel.findByIdAndDelete(userId, function(err,customerResponse){
         if(err){
             res.send({status: 500, message:'unable to delete the customer'});
