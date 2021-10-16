@@ -1,0 +1,28 @@
+nav{
+   background-attachment: fixed; 
+    background: rgb(25, 142, 201);
+    color: rgb(248, 247, 247);
+    
+    margin-top: 0;
+    position: sticky;
+    
+}
+.btn-primary{
+    background-color: rgb(224, 186, 15) ;
+}
+.active{
+    color: rgb(108, 108, 214);
+}
+button{
+    margin: 10px 10px 10px 20px ;
+    
+}
+
+/* .head{
+    
+    width: auto;
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+   
+} */

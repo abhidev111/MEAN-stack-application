@@ -1,0 +1,20 @@
+<div class="card shadow p-3 mb-5  rounded">
+    <h2>Login</h2>
+<form #signInForm="ngForm" (submit)="signInForm.valid && onSubmit(signInForm)">
+    <!-- <input type="text" class="form-control" placeholder="Username"> -->
+    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="model.email" name="email" 
+    #mailId="ngModel"
+    required [ngClass]="{'invalid-textbox': signInForm.submitted && !mailId.valid}">
+    <div class="label" *ngIf="signInForm.submitted && !mailId.valid"> Email can't be empty</div> 
+
+    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="model.password" name="password" 
+    #Password="ngModel" minlength="4"
+    required [ngClass]="{'invalid-textbox': signInForm.submitted && !Password.valid}"  >
+    <div class="label" *ngIf="signInForm.submitted && !Password.valid && !Password.errors?.minlength">Password can't be empty</div>
+    <div class="label" *ngIf="signInForm.submitted && Password.errors?.minlength">Minimum 4 characters required</div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+<div class="errMsg" *ngIf="gotErr">{{serverErrorMsg}}</div>
+<p>New here ? <a [routerLink]="['../sign-up']">Register</a> </p>
+
+</div>

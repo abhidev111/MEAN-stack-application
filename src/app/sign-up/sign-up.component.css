@@ -1,0 +1,65 @@
+.card{
+    top:100px;
+    background-color: aquamarine;
+    padding: 20px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+form,button,h2,p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    margin-top: 20px;
+}
+form{
+    
+    width: 400px;
+}
+input{
+    margin-top: 20px;
+}
+p{
+    margin-top: 15px;
+}
+.invalid-textbox{
+    box-sizing: border-box;
+    border: 3px solid rgb(241, 107, 107);
+  border-radius: 4px; 
+   transition: border-width 0.5s linear;
+    
+}
+.sucMsg{
+    width:100%;
+    background: rgb(29, 124, 5);
+    color: whitesmoke;
+    text-align: center;
+    padding: 8px;
+    margin-top:10px;
+    border-radius: 3px;
+
+}
+.errMsg{
+    width:100%;
+    background: rgb(168, 38, 38);
+    color: whitesmoke;
+    font-size: 16px;
+    text-align: center;
+    padding: 8px;
+    margin-top:10px;
+    border-radius: 3px;
+
+}
+.label{
+    /* text-align: center; */
+    color:#ec5439;
+    transition: 0.5s linear;
+}
+.loginButton{
+    background: yellow;
+    width: 100%;
+}

@@ -1,0 +1,30 @@
+tr{
+    margin: 5px;
+    
+}
+table{
+    width: 100%;
+    /* display: block; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    margin: 0 auto;
+}
+
+td,th{
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+tr:nth-child(even) {
+    background-color: #f3f0f0;
+  }
+  tr:nth-child(odd) {
+    background-color: #fcb4f2;
+  }
+
+  .goRight{
+    
+    /* float:right; */
+    display: inline;
+    margin: 200px;
+    
+}

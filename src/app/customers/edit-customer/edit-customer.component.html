@@ -1,0 +1,52 @@
+
+
+<h3>Edit customer details : </h3>
+<!-- <p>customer Id : {{customerObj._id}}</p> -->
+<p>Customer Id : {{customerId}}</p>
+<div class="center p-4 m-2">
+
+    <div class="card shadow p-3 mb-5 bg-white rounded">
+<form #UpdateCustomerForm ="ngForm" (submit)="UpdateCustomerForm.valid && editGivenCustomer()" >
+    
+    <label class="p-2 ">First name : </label> <input class="form-control m-2"  name="updatedCustomerObj.firstName" [ngModel]="updatedCustomerObj.firstName | uppercase" (ngModelChange)="updatedCustomerObj.firstName=$event" 
+    #fname="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !fname.valid}"
+    >
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !fname.valid">Please enter a valid First name</div>
+
+
+    <label class="p-2">Last name : </label> <input class="form-control m-2" name="updatedCustomerObj.lastName" [ngModel]="updatedCustomerObj.lastName | uppercase"  (ngModelChange)="updatedCustomerObj.lastName=$event" 
+    #lname="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !lname.valid}"
+    >
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !lname.valid">Please enter a valid Last name</div>
+
+
+    <label class="p-2">DOB     : </label> <input class="form-control m-2" type="date" name="updatedCustomerObj.dob" [ngModel]="updatedCustomerObj.dob"  (ngModelChange)="updatedCustomerObj.dob=$event" 
+    #dob="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !dob.valid}" >
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !dob.valid">Please enter a valid dob</div>
+
+
+    <label class="p-2">Email   : </label> <input class="form-control m-2" type="email" pattern=".+@gmail\.com" size="30" name="updatedCustomerObj.emailAddress" [ngModel]="updatedCustomerObj.emailAddress | lowercase"  (ngModelChange)="updatedCustomerObj.emailAddress=$event" 
+    #emailAddress="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !emailAddress.valid}"
+    >
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !emailAddress.valid">Please enter a valid Email address</div>
+
+
+    <label class="p-2">Phone Number : </label> <input class="form-control m-2" type="text" maxlength="10" pattern="\d{10}" title="Please enter exactly 10 digits" name="updatedCustomerObj.phoneNumber" [ngModel]="updatedCustomerObj.phoneNumber"  (ngModelChange)="updatedCustomerObj.phoneNumber=$event" 
+    #no="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !no.valid}">
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !no.valid">Please enter a valid Phone number</div>
+
+
+    <label class="p-2">Department : </label> <input class="form-control m-2" name="updatedCustomerObj.department" [ngModel]="updatedCustomerObj.department | uppercase"  (ngModelChange)="updatedCustomerObj.department=$event" 
+    #department="ngModel" required [ngClass]="{'invalid-textbox': UpdateCustomerForm.submitted && !department.valid}" >
+    <div class="label" *ngIf="UpdateCustomerForm.submitted && !department.valid">Please enter a valid Department</div>
+
+
+    <div class="center">
+    <button   type="submit" class="btn-outline-primary m-4" >Update</button>
+    <button *ngIf="Updated" class="btn-warning m-4" (click)="goBack()">Back</button><br>
+    
+    </div>
+</form>
+<h4 style="color: green; text-align: center;" *ngIf="Updated">{{successNote}}</h4>
+</div>
+</div>

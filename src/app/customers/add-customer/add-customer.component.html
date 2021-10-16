@@ -1,0 +1,67 @@
+
+
+<h3>Add customer details : </h3>
+<!-- <p>customer Id : {{customerObj._id}}</p> -->
+
+<div class="center p-4 m-2">
+
+<div class="card shadow p-3 mb-5  rounded">
+<form #addCustomerForm ="ngForm"  (submit)="addCustomerForm.valid && addGivenCustomer(addCustomerForm)" >
+    
+    <label class="p-2 ">First name : </label> 
+    <input class="form-control m-2"  name="addCustomerObj.firstName" [ngModel]="addCustomerObj.firstName | uppercase" (ngModelChange)="addCustomerObj.firstName=$event" 
+    #fname="ngModel" required [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !fname.valid}" 
+    >
+    <div class="label" *ngIf="addCustomerForm.submitted && !fname.valid">Please enter a valid First name</div>
+    
+    <!-- <br> -->
+
+    <label class="p-2">Last name : </label> 
+    <input class="form-control m-2" name="addCustomerObj.lastName" [ngModel]="addCustomerObj.lastName | uppercase" (ngModelChange)="addCustomerObj.lastName=$event" required 
+    #lname="ngModel" [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !lname.valid}"
+    >
+    <div class="label" *ngIf="addCustomerForm.submitted && !lname.valid">Please enter a valid Last name</div>
+    
+    <!-- <br> -->
+    <label class="p-2">DOB     : </label> 
+    <input class="form-control m-2" type="date" name="addCustomerObj.dob" [(ngModel)]="addCustomerObj.dob" 
+    #date="ngModel" required [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !date.valid}"
+    >
+    <div class="label" *ngIf="addCustomerForm.submitted && !date.valid">Please enter a valid Date</div>
+    
+    <!-- <br> -->
+    <label class="p-2">Email   : </label> 
+    <input class="form-control m-2" type="email"  name="addCustomerObj.emailAddress" [ngModel]="addCustomerObj.emailAddress | lowercase" (ngModelChange)="addCustomerObj.emailAddress=$event" required
+    #emale="ngModel" [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !emale.valid}"
+    >
+    <div class="label" *ngIf="addCustomerForm.submitted && !emale.valid">Please enter a valid Email</div>
+    
+    <!-- <br> -->
+    <label class="p-2">Phone Number : </label> 
+    <input class="form-control m-2" type="number" size="10" name="addCustomerObj.phoneNumber" [(ngModel)]="addCustomerObj.phoneNumber" 
+    #no="ngModel" required [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !no.valid}"
+    >
+    <div class="label" *ngIf="addCustomerForm.submitted && !no.valid">Please enter a valid Phone number</div>
+    
+    <!-- <br> -->
+    <label class="p-2">Department : </label> 
+    <input class="form-control m-2" name="addCustomerObj.department" [ngModel]="addCustomerObj.department | uppercase" (ngModelChange)="addCustomerObj.department=$event"
+    #dept="ngModel" required [ngClass]="{'invalid-textbox': addCustomerForm.submitted && !dept.valid}" >
+    <div class="label" *ngIf="addCustomerForm.submitted && !dept.valid">Please enter a valid Department</div>
+
+
+    <div class="center">
+    <button   type="submit" class="btn btn-success m-4" >Add customer</button>
+  
+    
+    <button *ngIf="Added" class="btn-warning m-4" (click)="goBack()">Back</button><br>
+    
+    </div>
+</form>
+<div class="center">
+    <h4 style="color: green; background-color: rgb(163, 221, 248); border:3px rgb(55, 100, 247); border-radius: 10px;" class="center p-2" *ngIf="Added">{{successNote}}</h4>
+    </div>
+</div>
+</div>
+
+

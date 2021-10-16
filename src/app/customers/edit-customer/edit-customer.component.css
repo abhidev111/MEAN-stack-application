@@ -1,0 +1,56 @@
+/* p,h3{
+    text-align: center;
+}
+form{
+    margin-left: auto;
+    margin-right: auto;
+}
+input,label{
+    display: inline-flex;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.card{
+    
+    width: 450px;
+} */
+p,h3{
+    text-align: center;
+}
+form{
+    margin-left: auto;
+    margin-right: auto;
+}
+input,label{
+    display: inline-flex;
+    margin: 0 10px 0 10px;
+}
+input{
+    width:400px;
+    background: rgb(241, 239, 239);
+    border: 1px solid rgb(14, 13, 13);
+
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.card{
+    
+    width: 450px;
+    background-color: rgba(207, 235, 243, 0.87);
+}
+.invalid-textbox{
+    box-sizing: border-box;
+    border: 3px solid rgb(241, 107, 107);
+  border-radius: 4px; 
+   transition: border-width 0.5s linear;
+    
+}
+.label{
+    text-align: center;
+    color:#ec5439;
+    transition: 0.5s linear;
+}

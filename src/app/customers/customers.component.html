@@ -1,0 +1,13 @@
+
+<div class="flex " >
+    <button class="btn btn-warning" (click)="back()">Back</button>
+<button class="btn btn-primary"  [routerLink]="['./list-customer']">Customer list </button>
+<button class="btn btn-success"  [routerLink]="['./add-customer']">Add customer</button>
+
+<!-- <button class="btn btn-warning"[routerLink]="['./edit-customer']">update </button>
+<button class="btn btn-danger"[routerLink]="['./delete-customer']">delete</button> -->
+
+</div>
+
+<!-- [routerLink]="['list-customer/search-customer',customerId]" -->
+<router-outlet></router-outlet>      
